@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>웅진 베베북클럽</title>
+	<link href="css/bulma.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- header -->
+	<header class="sub">
+		<div class="logo">
+			<img src="./img/logo.png" alt="웅진 베베북클럽">
+		</div>
+		<div class="page-title">
+			베베발달검진
+		</div>
+	</header>
+
+	<!-- content -->
+	<section class="content recommend">
+		<div class="container is-fluid">
+			<!-- title bar -->
+			<div class="test-info">
+				<span class="name"><img src="./img/icon_face.png">이풀잎</span>
+				<span class="birth">2019년 11월 11일생 (15개월)</span>
+			</div>
+
+			<!-- page title -->
+			<h1><b>이풀잎</b> 아동을 위한<br>베베북클럽 추천 STEP</h1>
+
+			<!-- recommend content -->
+			<div class="step">
+				<ul class="first">
+					<li class="is-active">
+						<span class="name"><b>1</b>단계</span>
+						<span class="description">오감을 깨워요!</span>
+					</li>
+					<li>
+						<span class="name"><b>2</b>단계</span>
+						<span class="description">건강한 습관 형성과 언어 발달을 자극해요!</span>
+					</li>
+					<li>
+						<span class="name"><b>3</b>단계</span>
+						<span class="description">다양한 예술을 경험하고, 인지 발달의 기초를 다져요!</span>
+					</li>
+				</ul>
+				<ul class="second">
+					<li class="is-active">1 STEP</li>
+					<li>2 STEP</li>
+					<li>3 STEP</li>
+					<li>4 STEP</li>
+				</ul>
+			</div>
+			<p class="help">* 표준 발달 권장 연령 : <b>6~12개월</b></p>
+
+			<div class="detail">
+				<h2>1 STEP<sub>(6~7개월)</sub></h2>
+				<h3>눈이 반짝, 귀가 쫑긋</h3>
+				<p>엄마 아빠 외에도 만나는 모든 사람을 반가운 표정으로 맞이하는 시기에요. 옹알이도 길어지고, 딸랑이와 깍꿍 놀이를 좋아하게 되면서 대소근육이 함께 발달하는 시기랍니다.</p>
+				<h3>"오감각 발달 자극"</h3>
+				<div class="tags">
+					<span class="tag is-primary is-light">#시각</span>
+					<span class="tag is-primary is-light">#청각</span>
+					<span class="tag is-primary is-light">#촉각</span>
+					<span class="tag is-primary is-light">#대소근육</span>
+				</div>
+			</div>
+
+			<div class="result">
+				<img src="./img/icon_confetti.png">
+				<span>베베북클럽</span>
+				<span class="strong"><b>1</b>단계 <b>1STEP</b>부터</span>
+				<span>시작해보세요!</span>
+			</div>
+
+
+			<!-- buttons -->
+			<div class="buttons">
+				<a href="./01_index.html" class="button is-primary is-fullwidth">
+					<img src="./img/icon_complete.png"><span>검사완료</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- footer -->
+	<section class="footter">
+		<footer>
+			<p>© WOONGJIN THINKBIG. All rights reserved.</p>
+		</footer>
+	</section>
+
+	<script>
+		// tab function
+		const tab = document.querySelector('.result-tab');
+		const result1 = window.pageYOffset + document.querySelector('.result-1').getBoundingClientRect().top;
+		const result2 = window.pageYOffset + document.querySelector('.result-2').scrollTop;
+
+		tab.addEventListener('click', function (e) {
+			tab.querySelectorAll('li').forEach(function (el) {
+				el.classList.remove('is-active');
+			})
+			e.target.classList.add('is-active');
+			const targetElement = document.querySelector(`.result-${e.target.getAttribute('data-tab-order')}`);
+			let targetPosition = targetElement.offsetTop;
+
+			window.scrollTo({
+				top: targetPosition
+			});
+			console.log(targetElement.offsetTop);
+		})
+
+		// scroll action
+		window.addEventListener('scroll', function (e) {
+			if (window.scrollY > 300) {
+				tab.classList.add('is-top');
+			} else {
+				tab.classList.remove('is-top');
+			}
+		})
+	</script>
+
+</body>
+
+</html>
