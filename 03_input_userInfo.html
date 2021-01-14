@@ -17,7 +17,7 @@
 			<img src="./img/logo.png" alt="웅진 베베북클럽">
 		</div>
 		<div class="page-title">
-			베베발달검진
+			베베 발달 검진
 		</div>
 	</header>
 
@@ -27,7 +27,7 @@
 			<form action="">
 				<!-- input: name -->
 				<div class="field">
-					<label class="label">이름</label>
+					<label class="label">자녀 이름</label>
 					<div class="control">
 						<input v-model="userName" class="input" type="text" placeholder="이름을 입력하세요">
 					</div>
@@ -35,13 +35,13 @@
 
 				<!-- input: birthday -->
 				<div class="field">
-					<label class="label">생년월일</label>
+					<label class="label">자녀 생년월일</label>
 					<div class="field has-addons">
 						<div class="control is-expanded">
 							<input v-model="birthday" class="input" type="number" placeholder="예: 20191017">
 						</div>
 						<div class="control">
-							<a class="button is-static">월령 : <b class="has-text-black">{{ age }}</b> 개월</a>
+							<a class="button is-static">월령 :&nbsp;<b class="has-text-black">{{ age }}</b> 개월</a>
 						</div>
 					</div>
 					<p v-if="!isValidAge" class="help is-danger">형식에 맞게 입력해주세요.</p>
