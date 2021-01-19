@@ -363,30 +363,48 @@ li {
 }
 
 .input-userInfo .agreement {
-	border: 1px solid #ddd;
-	background-color: #f9f9f9;
-	color: #999;
-	padding: 1rem;
-	height: 150px;
-	overflow-y: scroll;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	padding: 1.5rem;
 	font-size: 12px;
-	white-space: pre-line;
+	margin-bottom: 1rem;
+}
+.input-userInfo .agreement h4 {
+	font-size: .8rem;
+	line-height: 1.5;
+}
+.input-userInfo .agreement .table th,
+.input-userInfo .agreement .table td {
+	text-align: center;
+}
+.input-userInfo .agreement .table th {
+	background-color: #eee;
+}
+.input-userInfo .agreement .checkboxs {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+	background-color: #555;
+	border-radius: 3px;
+	padding: .5rem;
 }
 
 .input-userInfo .checkbox {
 	display: flex;
 	align-items: center;
-	font-size: .8rem;
-	padding: 1.2rem 0;
-	color: #f14668;
+	font-size: .9rem;
+	margin: 0 1rem;
+}
+.input-userInfo .checkbox span {
+	color: #aaa;
 }
 
-.input-userInfo .checkbox input[type=checkbox] {
+.input-userInfo .checkbox input[type=radio] {
 	margin-right: 5px;
 }
 
-.input-userInfo .checkbox input[type=checkbox]:checked+span {
-	color: #333;
+.input-userInfo .checkbox input[type=radio]:checked+span {
+	color:#fff;
 }
 
 /* result */
